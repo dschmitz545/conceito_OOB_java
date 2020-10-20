@@ -8,15 +8,15 @@ package cvaula02;
 //(Molde)Classe - tem todos os atributos e todos os métodos
 public class Caneta {
     //atributos
-    String modelo;
-    String cor;
-    float ponta;
-    int carga;
-    boolean tampada;
+    public String modelo;
+    public String cor;
+    private float ponta;
+    protected int carga;
+    protected boolean tampada;
     
     //metodo
     // this é autoreferência, quem chamou o método status, sera substituido por this
-    void status() {
+    public void status() {
         System.out.println("Modelo: " + this.modelo);
         System.out.println("Uma Caneta "  + this.cor);
         System.out.println("Ponta: " + this.ponta);
@@ -25,7 +25,7 @@ public class Caneta {
     }
     
     //metodo
-    void rabiscar() {
+    public void rabiscar() {
         if(this.tampada == true) {
             System.out.println("Erro! Não posso rabiscar");
         } else {
@@ -36,13 +36,13 @@ public class Caneta {
     
     //metodo
     // this é nome do objeto que chamou o método tampada, nesse exemplo o c1.
-    void tampar() {
+    protected void tampar() {
         this.tampada = true;
         
     }
     
     //metodo
-    void destampar() {
+    protected void destampar() {
         this.tampada = false;
     }
     
